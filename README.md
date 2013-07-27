@@ -1,1 +1,4 @@
-gh-pages for sandeepraju.in
+sandeepraju.in
+==============
+
+my personal website!
