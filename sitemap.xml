@@ -1,31 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/archives/</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/blog/2013/08/04/hello-world/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/blog/2013/08/05/ssh-connection-timeout/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/404.html</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/archives/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/blog/archives/</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/blog/</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/404.html</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/about/</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/blog/archives/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
     <url>
-        <loc>http://sandeepraju.github.com/sandeepraju/robots.txt</loc>
-        <lastmod>2013-08-04T22:42:29+05:30</lastmod>
+        <loc>http://sandeepraju.in/blog/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://sandeepraju.in/about/</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://sandeepraju.in/robots.txt</loc>
+        <lastmod>2013-08-04T23:46:11+05:30</lastmod>
     </url>
 </urlset>

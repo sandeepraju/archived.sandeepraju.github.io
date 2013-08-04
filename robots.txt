@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://sandeepraju.github.com/sandeepraju/sitemap.xml 
+Sitemap: http://sandeepraju.in/sitemap.xml 
