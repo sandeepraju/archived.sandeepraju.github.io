@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Sandeep Raju]]></title>
+  <link href="http://sandeepraju.github.com/sandeepraju/atom.xml" rel="self"/>
+  <link href="http://sandeepraju.github.com/sandeepraju/"/>
+  <updated>2013-08-04T23:22:39+05:30</updated>
+  <id>http://sandeepraju.github.com/sandeepraju/</id>
+  <author>
+    <name><![CDATA[Sandeep Raju]]></name>
+    <email><![CDATA[me@sandeepraju.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
