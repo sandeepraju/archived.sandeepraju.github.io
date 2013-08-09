@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dev | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/dev/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2013-08-04T23:50:13+05:30</updated>
+  <updated>2013-08-09T17:06:32+05:30</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -37,6 +37,8 @@
 <pre><code>Host *
   ServerAliveInterval 60
 </code></pre>
+
+<p><strong>UPDATE:</strong> Nevertheless, sometimes, due to some network issues the session might hang. In such cases, to end the SSH session, press <code>ENTER ~ .</code> in sequence.</p>
 
 <p>Happy coding! :)</p>
 ]]></content>
