@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2013-08-09T17:06:32+05:30</updated>
+  <updated>2013-08-18T00:52:47+05:30</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Terminal Sharing Using Tmux]]></title>
+    <link href="http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux/"/>
+    <updated>2013-08-17T22:10:00+05:30</updated>
+    <id>http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux</id>
+    <content type="html"><![CDATA[<p>Recently, I helped my friend setup <a href="http://vijaym.in">his octopress blog</a>. The problem was that, we were miles apart and interacting via chat turned out to be hard. What we needed was a shared terminal where both of us could see the commands entered by either of us. A quick google search showed me that this was possible easily using <a href="http://tmux.sourceforge.net/">tmux</a>.</p>
+
+<!-- more -->
+
+
+<p>Simply said, tmux is a <em>terminal multiplexer</em>. What that means? Here is what the <a href="http://tmux.sourceforge.net/">official site</a> says&hellip;</p>
+
+<blockquote><p>It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.</p></blockquote>
+
+<p>Basically, its a better alternative to <a href="http://www.gnu.org/software/screen/">screen</a> which I was already using for a while.</p>
+
+<p>This is what I did to share <em>his</em> terminal with <em>me</em>,</p>
+
+<ul>
+<li>We installed tmux using the command <code>sudo apt-get install tmux</code> on both the systems.</li>
+<li>Asked him to run the following commands on the terminal that <em>he</em> wants to share with <em>me</em>.</li>
+</ul>
+
+
+<p>```bash</p>
+
+<h1>specify the name of the tmux socket with -S when creating it</h1>
+
+<p>tmux -S /tmp/share</p>
+
+<h1>chmod to allow me to access his socket</h1>
+
+<p>chmod 777 /tmp/share
+```</p>
+
+<ul>
+<li>Then, I logged into <em>his</em> system via SSH and ran the following command to access the terminal <em>he</em> is sharing with <em>me</em>.</li>
+</ul>
+
+
+<p>```bash</p>
+
+<h1>now to connect to his shared terminal</h1>
+
+<p>tmux -S /tmp/share attach
+```</p>
+
+<p>As simple as that!</p>
+
+<p>Happy coding :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git, the stupid content tracker]]></title>

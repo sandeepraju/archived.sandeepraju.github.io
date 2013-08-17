@@ -2,42 +2,46 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://sandeepraju.in/blog/2013/08/04/hello-world/</loc>
-        <lastmod>2013-08-05T00:06:09+05:30</lastmod>
+        <lastmod>2013-08-09T17:10:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/blog/2013/08/05/ssh-connection-timeout/</loc>
-        <lastmod>2013-08-09T17:01:50+05:30</lastmod>
+        <lastmod>2013-08-09T17:10:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/blog/2013/08/08/git-the-stupid-content-tracker/</loc>
-        <lastmod>2013-08-09T17:03:30+05:30</lastmod>
+        <lastmod>2013-08-09T17:10:26+05:30</lastmod>
+    </url>
+    <url>
+        <loc>http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux/</loc>
+        <lastmod>2013-08-18T00:51:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/archives/</loc>
-        <lastmod>2013-08-09T17:03:30+05:30</lastmod>
+        <lastmod>2013-08-18T00:51:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/</loc>
-        <lastmod>2013-08-09T17:03:30+05:30</lastmod>
+        <lastmod>2013-08-18T00:51:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/404.html</loc>
-        <lastmod>2013-08-05T00:06:09+05:30</lastmod>
+        <lastmod>2013-08-09T17:10:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/blog/archives/</loc>
-        <lastmod>2013-08-09T17:03:30+05:30</lastmod>
+        <lastmod>2013-08-18T00:51:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/blog/</loc>
-        <lastmod>2013-08-09T17:03:30+05:30</lastmod>
+        <lastmod>2013-08-18T00:51:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/about/</loc>
-        <lastmod>2013-08-05T00:06:09+05:30</lastmod>
+        <lastmod>2013-08-09T17:10:26+05:30</lastmod>
     </url>
     <url>
         <loc>http://sandeepraju.in/robots.txt</loc>
-        <lastmod>2013-08-05T00:06:09+05:30</lastmod>
+        <lastmod>2013-08-09T17:10:26+05:30</lastmod>
     </url>
 </urlset>
