@@ -4,7 +4,7 @@
   <title><![CDATA[Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2013-08-18T01:26:28+05:30</updated>
+  <updated>2013-08-22T08:35:29+05:30</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Django Dumpdata To Dump Selective Rows]]></title>
+    <link href="http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows/"/>
+    <updated>2013-08-22T08:14:00+05:30</updated>
+    <id>http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows</id>
+    <content type="html"><![CDATA[<p>Thanks to my <a href="https://twitter.com/GurteshwarSingh">telephony geek friend</a> for letting me know this simple but highly useful method to selectively dump <a href="https://www.djangoproject.com">django</a> models data into a django standard <em>model-dump</em> format. Here is a simple snippet which shows how to selectively dump only the required rows and not the entire model.</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Generate a queryset depending on whatever you need</span>
+</span><span class='line'><span class="n">query_set</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[:</span><span class="mi">2000</span><span class="p">]</span>  <span class="c"># selecting only first 2k rows</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Serialize the queryset into JSON with indentation of 4 spaces</span>
+</span><span class='line'><span class="n">json_data</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="s">&quot;json&quot;</span><span class="p">,</span> <span class="n">query_set</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Dump the json data into a file</span>
+</span><span class='line'><span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;YourModel.json&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+</span><span class='line'><span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Works like a charm!</p>
+
+<p>Happy coding :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Terminal Sharing Using Tmux]]></title>

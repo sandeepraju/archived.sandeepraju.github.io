@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: web | Sandeep Raju]]></title>
+  <link href="http://sandeepraju.in/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://sandeepraju.in/"/>
+  <updated>2013-08-22T08:35:30+05:30</updated>
+  <id>http://sandeepraju.in/</id>
+  <author>
+    <name><![CDATA[Sandeep Raju]]></name>
+    <email><![CDATA[me@sandeepraju.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Django Dumpdata To Dump Selective Rows]]></title>
+    <link href="http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows/"/>
+    <updated>2013-08-22T08:14:00+05:30</updated>
+    <id>http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows</id>
+    <content type="html"><![CDATA[<p>Thanks to my <a href="https://twitter.com/GurteshwarSingh">telephony geek friend</a> for letting me know this simple but highly useful method to selectively dump <a href="https://www.djangoproject.com">django</a> models data into a django standard <em>model-dump</em> format. Here is a simple snippet which shows how to selectively dump only the required rows and not the entire model.</p>
+
+<!-- more -->
+
+
+<p>```python
+from django.core import serializers</p>
+
+<h1>Generate a queryset depending on whatever you need</h1>
+
+<p>query_set = YourModel.objects.all()[:2000]  # selecting only first 2k rows</p>
+
+<h1>Serialize the queryset into JSON with indentation of 4 spaces</h1>
+
+<p>json_data = serializers.serialize(&ldquo;json&rdquo;, query_set, indent=4)</p>
+
+<h1>Dump the json data into a file</h1>
+
+<p>output_file = open(&lsquo;YourModel.json&rsquo;, &lsquo;w&rsquo;)
+output_file.write(json_data)
+output_file.close()</p>
+
+<p>```</p>
+
+<p>Works like a charm!</p>
+
+<p>Happy coding :)</p>
+]]></content>
+  </entry>
+  
+</feed>
