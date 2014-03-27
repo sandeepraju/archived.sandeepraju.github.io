@@ -4,7 +4,7 @@
   <title><![CDATA[Category: editor | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/editor/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2014-03-27T19:23:23+00:00</updated>
+  <updated>2014-03-27T19:37:43+00:00</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -23,13 +23,13 @@
 <!-- more -->
 
 
-<p>I use Mac Book Air for all development at work. The only problem I find with using Mac for development is that, my local development setup and the production setup are way too different. As all the code I write finally run on Linux in production, there might be cases which I might overlook if I run my code on OSx while developing. Considering this fact, I have an <a href="http://www.debian.org/">Debian</a> server <a href="https://www.virtualbox.org/">VirtualBox</a> running on my Mac which I use to write code and run tests. This requires me to ssh into my VirtualBox and code on the console. This is when I reaslised how important mastering a console based editor is. Though I was familar with <a href="http://www.vim.org/">ViM</a>, I was not at the same pace when I used to use Sublime. Eventually I got fed up and started mounting the VirtualBox&rsquo;s file system over ssh into my Mac and started using Sublime.</p>
+<p>I use Mac Book Air for all development at work. The only problem I find with using Mac for development is that, my local development setup and the production setup are way too different. As all the code I write finally run on Linux in production, there might be cases which I might overlook if I run my code on OSx while developing. Considering this fact, I have an <a href="http://www.debian.org/">Debian</a> server <a href="https://www.virtualbox.org/">VirtualBox</a> running on my Mac which I use to write code and run tests. This requires me to ssh into my VirtualBox and code on the console. This is when I realised how important mastering a console based editor is. Though I was familiar with <a href="http://www.vim.org/">ViM</a>, I was not at the same pace when I used to use Sublime. Eventually I got fed up and started mounting the VirtualBox&rsquo;s file system over ssh into my Mac and started using Sublime.</p>
 
-<p>All this worked fine for a few months until I found myself in a situation where I had to code on a remote server over ssh for a particular project. Mounting a remote filesystem in this case turned out to be a big disaster due to huge delays in synchronzing files over the network. At this point it was clear that I had to use a console based editor. My first choice was ViM as I was already familar with it, but I found myself lost very soon with all the complicated shortcuts &amp; modes it had. I am not blaming / judging it. I somewhat felt that ViM was simply not my cup of tea.</p>
+<p>All this worked fine for a few months until I found myself in a situation where I had to code on a remote server over ssh for a particular project. Mounting a remote filesystem in this case turned out to be a big disaster due to huge delays in synchronizing files over the network. At this point it was clear that I had to use a console based editor. My first choice was ViM as I was already familiar with it, but I found myself lost very soon with all the complicated shortcuts &amp; modes it had. I am not blaming / judging it. I somewhat felt that ViM was simply not my cup of tea.</p>
 
 <p>I felt I was out of choices. I looked around&hellip; Ah! One of my <a href="https://twitter.com/gurteshwarsingh">peer</a> was using <a href="http://www.gnu.org/software/emacs/">Emacs</a>. I had heard of this editor but never had the time or courage to actually try it out. I saw him seamlessly code in Emacs. It looked fast. It looked like something that I wanted. I installed it.</p>
 
-<p>Spending some time with Emacs, I realised that Emacs is more intuitve. It had this amazing capability that let us configure every single minute possibility to our liking. The key bindings made sense. I started to fiddle around with it and soon ended up making my Emacs look like Sublime ;) This is how my Emacs init.el looked like at the end of it&hellip;</p>
+<p>Spending some time with Emacs, I realised that Emacs is more intuitive. It had this amazing capability that let us configure every single minute possibility to our liking. The key bindings made sense. I started to fiddle around with it and soon ended up making my Emacs look like Sublime ;) This is how my Emacs init.el looked like at the end of it&hellip;</p>
 
 <p>```cl
 ;; emacs24 package system
@@ -97,7 +97,7 @@
 (add-hook &lsquo;before-save-hook 'delete-trailing-whitespace)
 ```</p>
 
-<p>Most of the lisp code is copied from all over the internet. I think eventally I&rsquo;ll learn <a href="">Emacs Lisp</a> and will be in a better position to understand completely as to what is happenning in these configs. I also installed some plugins like jedi (for autocompletion) and autopair.</p>
+<p>Most of the lisp code is copied from all over the internet. I think eventually I&rsquo;ll learn <a href="">Emacs Lisp</a> and will be in a better position to understand completely as to what is happening in these configs. I also installed some plugins like jedi (for autocompletion) and autopair.</p>
 
 <p>This is how my Emacs looks finally.</p>
 
