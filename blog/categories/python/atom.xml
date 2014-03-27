@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2013-09-06T06:11:52+05:30</updated>
+  <updated>2014-03-27T19:23:23+00:00</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Using Fabric To Run Commands Remotely]]></title>
     <link href="http://sandeepraju.in/blog/2013/09/06/using-fabric-to-run-commands-remotely/"/>
-    <updated>2013-09-06T05:53:00+05:30</updated>
+    <updated>2013-09-06T05:53:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/09/06/using-fabric-to-run-commands-remotely</id>
     <content type="html"><![CDATA[<p>At times, you might have to do some <em>ninjaing</em> around to run commands on mutiple servers. If you are like me, a semi literate in <a href="http://en.wikipedia.org/wiki/Shell_script">shell scripting</a>, you&rsquo;d google for the shell / <a href="http://en.wikipedia.org/wiki/AWK">awk</a> syntax and waste hours writing scripts to do this. But then, wasting hours to run a simple script on multiple servers is pointless. What if I can do this with Python? All problems solved :) That is where <a href="http://docs.fabfile.org/en/1.7/">Fabric</a> comes into picture!</p>
 
@@ -95,7 +95,7 @@ fab -P logged_in_users
   <entry>
     <title type="html"><![CDATA[Django Dumpdata To Dump Selective Rows]]></title>
     <link href="http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows/"/>
-    <updated>2013-08-22T08:14:00+05:30</updated>
+    <updated>2013-08-22T08:14:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows</id>
     <content type="html"><![CDATA[<p>Thanks to my <a href="https://twitter.com/GurteshwarSingh">telephony geek friend</a> for letting me know this simple but highly useful method to selectively dump <a href="https://www.djangoproject.com">django</a> models data into a django standard <em>model-dump</em> format. Here is a simple snippet which shows how to selectively dump only the required rows and not the entire model.</p>
 

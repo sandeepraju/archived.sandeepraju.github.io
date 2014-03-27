@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tech | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2013-09-06T06:11:52+05:30</updated>
+  <updated>2014-03-27T19:23:23+00:00</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Using Fabric To Run Commands Remotely]]></title>
     <link href="http://sandeepraju.in/blog/2013/09/06/using-fabric-to-run-commands-remotely/"/>
-    <updated>2013-09-06T05:53:00+05:30</updated>
+    <updated>2013-09-06T05:53:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/09/06/using-fabric-to-run-commands-remotely</id>
     <content type="html"><![CDATA[<p>At times, you might have to do some <em>ninjaing</em> around to run commands on mutiple servers. If you are like me, a semi literate in <a href="http://en.wikipedia.org/wiki/Shell_script">shell scripting</a>, you&rsquo;d google for the shell / <a href="http://en.wikipedia.org/wiki/AWK">awk</a> syntax and waste hours writing scripts to do this. But then, wasting hours to run a simple script on multiple servers is pointless. What if I can do this with Python? All problems solved :) That is where <a href="http://docs.fabfile.org/en/1.7/">Fabric</a> comes into picture!</p>
 
@@ -95,7 +95,7 @@ fab -P logged_in_users
   <entry>
     <title type="html"><![CDATA[Terminal Sharing Using Tmux]]></title>
     <link href="http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux/"/>
-    <updated>2013-08-17T22:10:00+05:30</updated>
+    <updated>2013-08-17T22:10:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux</id>
     <content type="html"><![CDATA[<p>Recently, I helped my friend setup <a href="http://vijaym.in">his octopress blog</a>. The problem was that, we were miles apart and interacting via chat turned out to be hard. What we needed was a shared terminal where both of us could see the commands entered by either of us. A quick google search showed me that this was possible easily using <a href="http://tmux.sourceforge.net/">tmux</a>.</p>
 
@@ -148,7 +148,7 @@ fab -P logged_in_users
   <entry>
     <title type="html"><![CDATA[Git, the stupid content tracker]]></title>
     <link href="http://sandeepraju.in/blog/2013/08/08/git-the-stupid-content-tracker/"/>
-    <updated>2013-08-08T20:20:00+05:30</updated>
+    <updated>2013-08-08T20:20:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/08/08/git-the-stupid-content-tracker</id>
     <content type="html"><![CDATA[<p>Recently, I gave a talk at <a href="http://pesit.pes.edu">PES Institute of Technology</a> on <a href="http://git-scm.com/">Git</a> as a part of <em>Saturday Morning Tech</em> (An initiative by <a href="https://www.facebook.com/groups/pesosc/">PES OpenSource Community</a>). It was fun talking about technology after a long time in college :)</p>
 
@@ -167,7 +167,7 @@ fab -P logged_in_users
   <entry>
     <title type="html"><![CDATA[SSH Connection Timeout]]></title>
     <link href="http://sandeepraju.in/blog/2013/08/05/ssh-connection-timeout/"/>
-    <updated>2013-08-05T00:00:00+05:30</updated>
+    <updated>2013-08-05T00:00:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/08/05/ssh-connection-timeout</id>
     <content type="html"><![CDATA[<p>A part of my work involves ssh-ing to multiple servers and working remotely. One of the major problems I faced with this was the frequent ssh timeout and as a result I had to close my hung terminal and re-ssh back. Recently I got fed up of this and found a solution to this problem on <a href="http://superuser.com/questions/98562/way-to-avoid-ssh-connection-timeout-freezing-of-terminal-tab">a superuser thread</a>.</p>
 

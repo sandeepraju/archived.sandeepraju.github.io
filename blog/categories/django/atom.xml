@@ -4,7 +4,7 @@
   <title><![CDATA[Category: django | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/django/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2013-09-06T06:11:52+05:30</updated>
+  <updated>2014-03-27T19:23:23+00:00</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Django Dumpdata To Dump Selective Rows]]></title>
     <link href="http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows/"/>
-    <updated>2013-08-22T08:14:00+05:30</updated>
+    <updated>2013-08-22T08:14:00+00:00</updated>
     <id>http://sandeepraju.in/blog/2013/08/22/django-dumpdata-to-dump-selective-rows</id>
     <content type="html"><![CDATA[<p>Thanks to my <a href="https://twitter.com/GurteshwarSingh">telephony geek friend</a> for letting me know this simple but highly useful method to selectively dump <a href="https://www.djangoproject.com">django</a> models data into a django standard <em>model-dump</em> format. Here is a simple snippet which shows how to selectively dump only the required rows and not the entire model.</p>
 
