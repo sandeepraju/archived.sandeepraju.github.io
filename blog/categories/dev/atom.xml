@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dev | Sandeep Raju]]></title>
   <link href="http://sandeepraju.in/blog/categories/dev/atom.xml" rel="self"/>
   <link href="http://sandeepraju.in/"/>
-  <updated>2014-03-28T21:08:51+00:00</updated>
+  <updated>2014-10-20T11:33:20+00:00</updated>
   <id>http://sandeepraju.in/</id>
   <author>
     <name><![CDATA[Sandeep Raju]]></name>
@@ -12,6 +12,65 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New kid in the block: SHARQ - An Open Source, Rate Limited, Queueing System]]></title>
+    <link href="http://sandeepraju.in/blog/2014/10/20/new-kid-in-the-block-sharq-an-open-source-queue/"/>
+    <updated>2014-10-20T08:08:00+00:00</updated>
+    <id>http://sandeepraju.in/blog/2014/10/20/new-kid-in-the-block-sharq-an-open-source-queue</id>
+    <content type="html"><![CDATA[<p>I have been fascinated about task queues since my college days. The way they are designed &amp; work has always interested me. Being a Pythonista, I have been using <a href="">Celery</a> for a long time. <a href="https://twitter.com/asksol">Ask</a> has done an amazing job building Celery and the ecosystem around it. It works great for general use-cases faced by a lot of companies in their day to day workflows (like sending out emails in the background, running periodic tasks, so on). However, sometimes that doesn&rsquo;t suffice.</p>
+
+<!-- more -->
+
+
+<p>Recently, I faced an unique situation. I had to rate limit the queues in a specific system. Having used Celery for quite a few years, it was my natural choice. But soon, I realized that creating queues dynamically is not possible with Celery. Celery also lacked a clean way to <a href="http://celery.readthedocs.org/en/latest/userguide/tasks.html#Task.rate_limit">update the rate limit of a queue globally</a>. This was not acceptable for my use case.</p>
+
+<p>All my efforts at searching for a queue with this specific feature set (dynamic queues, realtime rate limits &amp; constant flow rate) resulted in scripts and hacks written by several people, around various existing systems that were not built for this use case. It was apparent after some time that there was no simple, out of the box, cleaner solution for this problem and there was a scope for filling this void. This is how SHARQ came into existence.</p>
+
+<p>SHARQ bridges this void in a simple and elegant manner by supporting all the above mentioned features. It is built using <a href="http://www.python.org/">Python</a> (<a href="http://flask.pocoo.org/">Flask</a> &amp; <a href="http://www.gevent.org/">Gevent</a>) and uses <a href="http://redis.io/">Redis</a> as a broker. It talks HTTP with JSON payloads which makes writing workers in any language easy.</p>
+
+<p>SHARQ can be installed from <a href="https://pypi.python.org/pypi">PyPI</a> using the following command:</p>
+
+<p><code>bash
+pip install sharq-server
+</code></p>
+
+<p>Once SHARQ is installed, it will expose a <strong>sharq-server</strong> command. The command is minimal and accepts a SHARQ configuration file. To get started quickly, grab the SHARQ <a href="https://raw.githubusercontent.com/plivo/sharq-server/master/sharq.conf">sample configuration file from here</a>. The SHARQ Server can be started with the following command:</p>
+
+<p><code>bash
+sharq-server --config sharq.conf
+</code></p>
+
+<p>and you&rsquo;ll see SHARQ server running in foreground&hellip;</p>
+
+<pre><code>   ___ _              ___    ___
+  / __| |_  __ _ _ _ / _ \  / __| ___ _ ___ _____ _ _
+  \__ \ ' \/ _` | '_| (_) | \__ \/ -_) '_\ V / -_) '_|
+  |___/_||_\__,_|_|  \__\_\ |___/\___|_|  \_/\___|_|
+
+Version: 0.1.0
+
+Listening on: 127.0.0.1:8080
+</code></pre>
+
+<p>Now, you can play around with SHARQ using its <a href="http://sharq.io/docs/apireference.html">REST APIs</a>.To know more about how to use SHARQ and its enqueue-dequeue-finish workflow, checkout the <a href="http://sharq.io/docs/gettingstarted.html">getting started section on sharq.io</a>.</p>
+
+<p>SHARQ is open source and is <a href="https://github.com/plivo/sharq-server">available on Github</a>. Pull requests are always welcome!</p>
+
+<p><strong>FURTHER READING</strong>:</p>
+
+<ul>
+<li><a href="http://sharq.io/docs">The SHARQ docs</a></li>
+<li><a href="https://speakerdeck.com/sandeepraju/sharq-an-open-source-rate-limited-queueing-system-pycon-india-2014">SHARQ at PyCon India 2014</a></li>
+<li><a href="https://github.com/sandeepraju/PyCon-India-2014">SHARQ resources of the PyCon talk</a></li>
+<li>SHARQ example <a href="https://gist.github.com/sandeepraju/bfa72c7027e1d739b33e">Enqueue</a> and <a href="https://gist.github.com/sandeepraju/3da0ad035aa9bf5504b1">Dequeue</a> gists</li>
+<li><a href="https://www.plivo.com/blog/sharq-a-flexible-open-source-rate-limited-queuing-system/">SHARQ on Plivo&rsquo;s blog</a></li>
+</ul>
+
+
+<p><strong>NOTE</strong>: I am the primary author of SHARQ and will be maintaining it constantly with features and bug fixes. SHARQ was written at <a href="https://www.plivo.com/">Plivo</a>. All the views and opinions expressed in this article are my own and does in no way reflect that of Plivo or any other entity.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My Experiments With Postgres]]></title>
@@ -376,59 +435,6 @@ output_file.close()</p>
 <p>```</p>
 
 <p>Works like a charm!</p>
-
-<p>Happy coding :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Terminal Sharing Using Tmux]]></title>
-    <link href="http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux/"/>
-    <updated>2013-08-17T22:10:00+00:00</updated>
-    <id>http://sandeepraju.in/blog/2013/08/17/terminal-sharing-using-tmux</id>
-    <content type="html"><![CDATA[<p>Recently, I helped my friend setup <a href="http://vijaym.in">his octopress blog</a>. The problem was that, we were miles apart and interacting via chat turned out to be hard. What we needed was a shared terminal where both of us could see the commands entered by either of us. A quick google search showed me that this was possible easily using <a href="http://tmux.sourceforge.net/">tmux</a>.</p>
-
-<!-- more -->
-
-
-<p>Simply said, tmux is a <em>terminal multiplexer</em>. What that means? Here is what the <a href="http://tmux.sourceforge.net/">official site</a> says&hellip;</p>
-
-<blockquote><p>It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.</p></blockquote>
-
-<p>Basically, its a better alternative to <a href="http://www.gnu.org/software/screen/">screen</a> which I was already using for a while.</p>
-
-<p>This is what I did to share <em>his</em> terminal with <em>me</em>,</p>
-
-<ul>
-<li>We installed tmux using the command <code>sudo apt-get install tmux</code> on both the systems.</li>
-<li>Asked him to run the following commands on the terminal that <em>he</em> wants to share with <em>me</em>.</li>
-</ul>
-
-
-<p>```bash</p>
-
-<h1>specify the name of the tmux socket with -S when creating it</h1>
-
-<p>tmux -S /tmp/share</p>
-
-<h1>chmod to allow me to access his socket</h1>
-
-<p>chmod 777 /tmp/share
-```</p>
-
-<ul>
-<li>Then, I logged into <em>his</em> system via SSH and ran the following command to access the terminal <em>he</em> is sharing with <em>me</em>.</li>
-</ul>
-
-
-<p>```bash</p>
-
-<h1>now to connect to his shared terminal</h1>
-
-<p>tmux -S /tmp/share attach
-```</p>
-
-<p>As simple as that!</p>
 
 <p>Happy coding :)</p>
 ]]></content>
