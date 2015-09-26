@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>Using Fabric To Run Commands Remotely - Sandeep Raju</title>
+
+    <link rel="canonical" href="http://sandeepraju.in/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Sandeep Raju</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/contact/">Contact</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Using Fabric To Run Commands Remotely</h1>
+                    
+                    <span class="meta">Posted by Sandeep Raju on September 6, 2013</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>At times, you might have to do some <em>ninjaing</em> around to run commands on mutiple servers. If you are like me, a semi literate in <a href="http://en.wikipedia.org/wiki/Shell_script">shell scripting</a>, you’d google for the shell / <a href="http://en.wikipedia.org/wiki/AWK">awk</a> syntax and waste hours writing scripts to do this. But then, wasting hours to run a simple script on multiple servers is pointless. What if I can do this with Python? All problems solved :) That is where <a href="http://docs.fabfile.org/en/1.7/">Fabric</a> comes into picture!</p>
+
+<!-- more -->
+
+<blockquote>
+  <p>Fabric is a Python library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks.</p>
+</blockquote>
+
+<p>Installing fabric is easy. Just run the following commands to install fabric via <a href="https://pypi.python.org/pypi/pip">pip</a>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">apt-get install gcc python-dev python-setuptools  
+pip install fabric</code></pre></div>
+
+<p>This enables the <em>fab</em> command which will be used to run fabric scripts. Fabric script file is named <code>fabfile.py</code> by convention. So, let us create a small script to check how many users logged into each server.</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="c"># filename: fabfile.py</span>
+<span class="lineno">2</span> <span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">run</span>
+<span class="lineno">3</span> 
+<span class="lineno">4</span> <span class="n">env</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;192.168.0.9&#39;</span><span class="p">,</span> <span class="s">&#39;192.168.0.10&#39;</span><span class="p">,</span> <span class="s">&#39;192.168.0.11&#39;</span><span class="p">]</span>
+<span class="lineno">5</span> 
+<span class="lineno">6</span> <span class="k">def</span> <span class="nf">logged_in_users</span><span class="p">():</span>
+<span class="lineno">7</span>     <span class="n">run</span><span class="p">(</span><span class="s">&#39;who&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>Now, when we run this function using fabric, an ssh connection is made into each of the servers listed and the function is run. We can run this using the following command,</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">fab logged_in_users</code></pre></div>
+
+<p>Note that due to the naming convention we followed, we need not even give the filename to the fab command. It will automatically look for the file named <code>fabfile.py</code>    and runs the function you have specified.</p>
+
+<p>Here is what you get as output, the logged in users of each system,</p>
+
+<pre><code>[192.168.0.9] Executing task 'logged_in_users'
+[192.168.0.9] run: who
+[192.168.0.9] out: sandeep  tty7         2013-09-05 15:24 (:0)
+[192.168.0.9] out: alex     pts/0        2013-09-05 22:38 (:0)
+[192.168.0.9] out: root     pts/2        2013-09-06 03:31 (192.168.0.9)
+[192.168.0.9] out: 
+
+[192.168.0.10] Executing task 'logged_in_users'
+[192.168.0.10] run: who
+[192.168.0.10] out: sandeep  tty7         2013-09-05 15:22 (:0)
+[192.168.0.10] out: 
+
+[192.168.0.11] Executing task 'logged_in_users'
+[192.168.0.11] run: who
+[192.168.0.11] out: sandeep  tty7         2013-09-05 15:21 (:0)
+[192.168.0.11] out: 
+
+
+Done.
+Disconnecting from 192.168.0.11... done.
+Disconnecting from 192.168.0.10... done.
+Disconnecting from 192.168.0.09... done.
+</code></pre>
+
+<p>If you just ran this command, you’d realise that the process happens in a sequence. That is, the command is run on each server one after another. To run this command parallely on the listed server, pass the -P flag to the command. So, the same command runs the function in parallelly on each server,</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">fab -P logged_in_users</code></pre></div>
+
+<p>Now, with fabric, running scripts on multiple servers is simple and quick! :)</p>
+
+<p><strong>SOURCE:</strong> This post is based on <a href="https://gist.github.com/DavidWittman/1886632">A Brief Introduction to Fabric</a> which I stumbled upon when I was looking for getting started with Fabric quickly. Check it out. Its pretty cool :)</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/dev/django/web/python/2013/08/22/django-dumpdata-to-dump-selective-rows/" data-toggle="tooltip" data-placement="top" title="Django Dumpdata To Dump Selective Rows">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/emacs/dev/programming/editor/lisp/2014/03/27/hello-emacs/" data-toggle="tooltip" data-placement="top" title="Hello Emacs">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+								
+                <ul class="disqus">
+										<div id="disqus_thread" aria-live="polite">
+<script type="text/javascript">
+      var disqus_shortname = 'SandeepRaju';
+      
+        
+        var disqus_identifier = 'http://sandeepraju.in/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/';
+        var disqus_url = 'http://sandeepraju.in/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/';
+        var disqus_script = 'embed.js';
+      
+			(function () {
+			  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			  dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+			  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			}());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+                </ul>
+                
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/sandeeprajup">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/sandeep.raju.p">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/sandeepraju">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Sandeep Raju 2015</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>Sandeep Raju</title>
+    <title>SSH Connection Timeout - Sandeep Raju</title>
 
-    <link rel="canonical" href="http://sandeepraju.in/">
+    <link rel="canonical" href="http://sandeepraju.in/tech/dev/2013/08/05/ssh-connection-timeout/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,94 +75,92 @@
 </nav>
 
 
-    <!-- Page Header -->
+    <!-- Post Header -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-										
-										<h1>I'm Sandeep Raju</h1>
-										
-                    <hr class="small">
-                    <span class="subheading">CS Grad Student at Northwestern University <br/>Programmer &middot; Open source enthusiast &middot; Design buff &middot; Into startups</span>
+                <div class="post-heading">
+                    <h1>SSH Connection Timeout</h1>
+                    
+                    <span class="meta">Posted by Sandeep Raju on August 5, 2013</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/life/etc/2015/09/27/it-has-been-an-year/">
-        <h2 class="post-title">            It has been an year already!
-        </h2>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>A part of my work involves ssh-ing to multiple servers and working remotely. One of the major problems I faced with this was the frequent ssh timeout and as a result I had to close my hung terminal and re-ssh back. Recently I got fed up of this and found a solution to this problem on <a href="http://superuser.com/questions/98562/way-to-avoid-ssh-connection-timeout-freezing-of-terminal-tab">a superuser thread</a>.</p>
+
+<!-- more -->
+
+<p>The solution involved configuring ssh on either the client machine or on the server. The basic reason why ssh times out is becasue the ssh server expects a <em>sign-of-life</em> signal from your client at regular intervals.</p>
+
+<p>Add the following configuration on the <code>~/.ssh/config</code> file in you client(local) system.</p>
+
+<pre><code>Host remotehost
+  HostName remotehost.com
+  ServerAliveInterval 60
+</code></pre>
+
+<p>this tells ssh to send <em>sign-of-life</em> signal every 60s whenever you are connected to remotehost.com. You can also enable it for all hosts that you connect to by changing the remotehost to * as follows.</p>
+
+<pre><code>Host *
+  ServerAliveInterval 60
+</code></pre>
+
+<p><strong>UPDATE:</strong> Nevertheless, sometimes, due to some network issues the session might hang. In such cases, to end the SSH session, press <code>ENTER ~ .</code> in sequence.</p>
+
+<p>Happy coding! :)</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/etc/2013/08/04/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World!">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/talk/tech/2013/08/08/git-the-stupid-content-tracker/" data-toggle="tooltip" data-placement="top" title="Git, the stupid content tracker">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+								
+                <ul class="disqus">
+										<div id="disqus_thread" aria-live="polite">
+<script type="text/javascript">
+      var disqus_shortname = 'SandeepRaju';
+      
         
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on September 27, 2015</p>
+        var disqus_identifier = 'http://sandeepraju.in/tech/dev/2013/08/05/ssh-connection-timeout/';
+        var disqus_url = 'http://sandeepraju.in/tech/dev/2013/08/05/ssh-connection-timeout/';
+        var disqus_script = 'embed.js';
+      
+			(function () {
+			  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			  dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+			  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			}());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
-<hr>
+                </ul>
+                
 
-<div class="post-preview">
-    <a href="/tech/dev/opensource/2014/10/20/sharq-an-open-source-queue/">
-        <h2 class="post-title">            SHARQ - an Open Source, Rate Limited, Queueing System
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on October 20, 2014</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/dev/database/postgres/sql/2014/03/28/my-experiments-with-postgres/">
-        <h2 class="post-title">            My Experiments With Postgres
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on March 28, 2014</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/emacs/dev/programming/editor/lisp/2014/03/27/hello-emacs/">
-        <h2 class="post-title">            Hello Emacs
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on March 27, 2014</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/">
-        <h2 class="post-title">            Using Fabric To Run Commands Remotely
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on September 6, 2013</p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-		</div>
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

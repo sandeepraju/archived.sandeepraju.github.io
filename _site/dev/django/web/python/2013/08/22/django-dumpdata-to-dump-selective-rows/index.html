@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>Sandeep Raju</title>
+    <title>Django Dumpdata To Dump Selective Rows - Sandeep Raju</title>
 
-    <link rel="canonical" href="http://sandeepraju.in/">
+    <link rel="canonical" href="http://sandeepraju.in/dev/django/web/python/2013/08/22/django-dumpdata-to-dump-selective-rows/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,94 +75,90 @@
 </nav>
 
 
-    <!-- Page Header -->
+    <!-- Post Header -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-										
-										<h1>I'm Sandeep Raju</h1>
-										
-                    <hr class="small">
-                    <span class="subheading">CS Grad Student at Northwestern University <br/>Programmer &middot; Open source enthusiast &middot; Design buff &middot; Into startups</span>
+                <div class="post-heading">
+                    <h1>Django Dumpdata To Dump Selective Rows</h1>
+                    
+                    <span class="meta">Posted by Sandeep Raju on August 22, 2013</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/life/etc/2015/09/27/it-has-been-an-year/">
-        <h2 class="post-title">            It has been an year already!
-        </h2>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<p>Thanks to my <a href="https://twitter.com/GurteshwarSingh">telephony geek friend</a> for letting me know this simple but highly useful method to selectively dump <a href="https://www.djangoproject.com">django</a> models data into a django standard <em>model-dump</em> format. Here is a simple snippet which shows how to selectively dump only the required rows and not the entire model.</p>
+
+<!-- more -->
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">django.core</span> <span class="kn">import</span> <span class="n">serializers</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="c"># Generate a queryset depending on whatever you need</span>
+<span class="lineno"> 4</span> <span class="n">query_set</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[:</span><span class="mi">2000</span><span class="p">]</span>  <span class="c"># selecting only first 2k rows</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="c"># Serialize the queryset into JSON with indentation of 4 spaces</span>
+<span class="lineno"> 7</span> <span class="n">json_data</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="s">&quot;json&quot;</span><span class="p">,</span> <span class="n">query_set</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="c"># Dump the json data into a file</span>
+<span class="lineno">10</span> <span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;YourModel.json&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="lineno">11</span> <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+<span class="lineno">12</span> <span class="n">output_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></div>
+
+<p>Works like a charm!</p>
+
+<p>Happy coding :)</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/tech/linux/dev/2013/08/17/terminal-sharing-using-tmux/" data-toggle="tooltip" data-placement="top" title="Terminal Sharing Using Tmux">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/" data-toggle="tooltip" data-placement="top" title="Using Fabric To Run Commands Remotely">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+								
+                <ul class="disqus">
+										<div id="disqus_thread" aria-live="polite">
+<script type="text/javascript">
+      var disqus_shortname = 'SandeepRaju';
+      
         
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on September 27, 2015</p>
+        var disqus_identifier = 'http://sandeepraju.in/dev/django/web/python/2013/08/22/django-dumpdata-to-dump-selective-rows/';
+        var disqus_url = 'http://sandeepraju.in/dev/django/web/python/2013/08/22/django-dumpdata-to-dump-selective-rows/';
+        var disqus_script = 'embed.js';
+      
+			(function () {
+			  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			  dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+			  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			}());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
-<hr>
+                </ul>
+                
 
-<div class="post-preview">
-    <a href="/tech/dev/opensource/2014/10/20/sharq-an-open-source-queue/">
-        <h2 class="post-title">            SHARQ - an Open Source, Rate Limited, Queueing System
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on October 20, 2014</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/dev/database/postgres/sql/2014/03/28/my-experiments-with-postgres/">
-        <h2 class="post-title">            My Experiments With Postgres
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on March 28, 2014</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/emacs/dev/programming/editor/lisp/2014/03/27/hello-emacs/">
-        <h2 class="post-title">            Hello Emacs
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on March 27, 2014</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/">
-        <h2 class="post-title">            Using Fabric To Run Commands Remotely
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on September 6, 2013</p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-		</div>
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

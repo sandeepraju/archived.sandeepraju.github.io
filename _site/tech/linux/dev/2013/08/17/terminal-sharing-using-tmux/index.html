@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
-    <title>Sandeep Raju</title>
+    <title>Terminal Sharing Using Tmux - Sandeep Raju</title>
 
-    <link rel="canonical" href="http://sandeepraju.in/">
+    <link rel="canonical" href="http://sandeepraju.in/tech/linux/dev/2013/08/17/terminal-sharing-using-tmux/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,94 +75,105 @@
 </nav>
 
 
-    <!-- Page Header -->
+    <!-- Post Header -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-										
-										<h1>I'm Sandeep Raju</h1>
-										
-                    <hr class="small">
-                    <span class="subheading">CS Grad Student at Northwestern University <br/>Programmer &middot; Open source enthusiast &middot; Design buff &middot; Into startups</span>
+                <div class="post-heading">
+                    <h1>Terminal Sharing Using Tmux</h1>
+                    
+                    <span class="meta">Posted by Sandeep Raju on August 17, 2013</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/life/etc/2015/09/27/it-has-been-an-year/">
-        <h2 class="post-title">            It has been an year already!
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on September 27, 2015</p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-<div class="post-preview">
-    <a href="/tech/dev/opensource/2014/10/20/sharq-an-open-source-queue/">
-        <h2 class="post-title">            SHARQ - an Open Source, Rate Limited, Queueing System
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on October 20, 2014</p>
-</div>
-<hr>
+				<p>Recently, I helped my friend setup <a href="http://vijaym.in">his octopress blog</a>. The problem was that, we were miles apart and interacting via chat turned out to be hard. What we needed was a shared terminal where both of us could see the commands entered by either of us. A quick google search showed me that this was possible easily using <a href="http://tmux.sourceforge.net/">tmux</a>.</p>
 
-<div class="post-preview">
-    <a href="/dev/database/postgres/sql/2014/03/28/my-experiments-with-postgres/">
-        <h2 class="post-title">            My Experiments With Postgres
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on March 28, 2014</p>
-</div>
-<hr>
+<!-- more -->
 
-<div class="post-preview">
-    <a href="/emacs/dev/programming/editor/lisp/2014/03/27/hello-emacs/">
-        <h2 class="post-title">            Hello Emacs
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on March 27, 2014</p>
-</div>
-<hr>
+<p>Simply said, tmux is a <em>terminal multiplexer</em>. What that means? Here is what the <a href="http://tmux.sourceforge.net/">official site</a> says…</p>
 
-<div class="post-preview">
-    <a href="/tech/dev/python/2013/09/06/using-fabric-to-run-commands-remotely/">
-        <h2 class="post-title">            Using Fabric To Run Commands Remotely
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by Sandeep Raju on September 6, 2013</p>
-</div>
-<hr>
+<blockquote>
+  <p>It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.</p>
+</blockquote>
 
+<p>Basically, its a better alternative to <a href="http://www.gnu.org/software/screen/">screen</a> which I was already using for a while.</p>
 
-<!-- Pager -->
+<p>This is what I did to share <em>his</em> terminal with <em>me</em>,</p>
 
-<ul class="pager">
-    
-    
-    <li class="next">
-        <a href="/page2">Older Posts &rarr;</a>
-    </li>
-    
+<ul>
+  <li>We installed tmux using the command <code>sudo apt-get install tmux</code> on both the systems.</li>
+  <li>Asked him to run the following commands on the terminal that <em>he</em> wants to share with <em>me</em>.</li>
 </ul>
 
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># specify the name of the tmux socket with -S when creating it</span>
+tmux -S /tmp/share
 
-		</div>
-	</div>
+<span class="c"># chmod to allow me to access his socket</span>
+chmod <span class="m">777</span> /tmp/share</code></pre></div>
+
+<ul>
+  <li>Then, I logged into <em>his</em> system via SSH and ran the following command to access the terminal <em>he</em> is sharing with <em>me</em>.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># now to connect to his shared terminal</span>
+tmux -S /tmp/share attach</code></pre></div>
+
+<p>As simple as that!</p>
+
+<p>Happy coding :)</p>
+
+
+                <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/talk/tech/2013/08/08/git-the-stupid-content-tracker/" data-toggle="tooltip" data-placement="top" title="Git, the stupid content tracker">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/dev/django/web/python/2013/08/22/django-dumpdata-to-dump-selective-rows/" data-toggle="tooltip" data-placement="top" title="Django Dumpdata To Dump Selective Rows">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+								
+                <ul class="disqus">
+										<div id="disqus_thread" aria-live="polite">
+<script type="text/javascript">
+      var disqus_shortname = 'SandeepRaju';
+      
+        
+        var disqus_identifier = 'http://sandeepraju.in/tech/linux/dev/2013/08/17/terminal-sharing-using-tmux/';
+        var disqus_url = 'http://sandeepraju.in/tech/linux/dev/2013/08/17/terminal-sharing-using-tmux/';
+        var disqus_script = 'embed.js';
+      
+			(function () {
+			  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			  dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+			  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			}());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
+                </ul>
+                
+
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

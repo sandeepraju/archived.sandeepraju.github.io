@@ -2,13 +2,13 @@
 title: Sandeep Raju
 header-img: img/home-bg.jpg
 email: me@sandeepraju.in
-description: "a place for my thoughts on every darn thing under the sun"
+description: ""
 baseurl: ""
-url: "http://yourdomain.com"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  IronSummitMedia
-disqus_shortname: DisqusNameHere
+url: "http://sandeepraju.in"
+twitter_username: sandeeprajup
+github_username: sandeepraju
+facebook_username: sandeep.raju.p
+disqus_shortname: SandeepRaju
 
 # Build settings
 markdown: kramdown
