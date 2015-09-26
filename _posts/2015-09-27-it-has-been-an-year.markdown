@@ -20,7 +20,7 @@ As always, no promises on being regular but I'll be writing more, and on a lot m
 * __Building _yn (wine)_ with [SK](https://twitter.com/srikrishnaholla) at [AngelHack 2015](http://angelhack.com/hackathon/bangalore-2015/)__ - Thought the hack finally didn't see the light of the day, it was awesome fun as ususal working with Shrikrishna after a long time.
 * __Mentoring Interns at [Plivo](https://www.plivo.com/)__ - Great fun interacting and mentoring the interns. Learnt a lot in the process which will help me in the days to come.
 * __Quitting my first job at [Plivo](https://www.plivo.com/)__ - It's hard to leave what you love the most, but then life had more interesting adventures up its sleeve.
-* __Buildiing [Strawberry Stack](https://github.com/sandeepraju/strawberry) with team Lambda at [Sequoia Hack 2015](http://www.sequoiahack.com/)__ - As always, it is fun hacking with [SK](https://twitter.com/srikrishnaholla), [P G](https://twitter.com/phalgun_g) and [Sujay](https://twitter.com/SujaySKumar1412).
+* __Building [Strawberry Stack](https://github.com/sandeepraju/strawberry) with team Lambda at [Sequoia Hack 2015](http://www.sequoiahack.com/)__ - As always, it is fun hacking with [SK](https://twitter.com/srikrishnaholla), [P G](https://twitter.com/phalgun_g) and [Sujay](https://twitter.com/SujaySKumar1412).
 * __Getting into [Northwestern University](http://www.northwestern.edu/)__ - Here I am, right now, at the start of my next adventure in this journey!
 
 It has been great so far (of course with a fair mix of ups and downs) and I am really excited to see what lies ahead for me.
