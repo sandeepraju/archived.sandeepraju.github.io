@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "It has been an year already!"
+title: "It has been a year already!"
 date: 2015-09-27 00:00
 comments: true
 categories: [life, etc]
 published: true
 ---
 
-It's been almost an year already (well, [342 days to be exact](https://ideone.com/EynuKF)) since I wrote anything here. A lot of it had to do with laziness and procastination rather than being busy and all that ;)
+It's been almost a year already (well, [342 days to be exact](https://ideone.com/EynuKF)) since I wrote anything here. A lot of it had to do with laziness and procastination rather than being busy and all that ;)
 
 But then, in life, you make this constant effort to improve - "be the better you". Being on such a journey of late, I have started to get back to writing.
 
