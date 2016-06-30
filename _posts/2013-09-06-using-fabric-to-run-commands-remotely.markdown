@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Fabric To Run Commands Remotely"
-date: 2013-09-06 05:53
+date: 2013-09-06 05:53:00
 comments: true
 categories: [tech, dev, python]
 published: true
@@ -49,17 +49,17 @@ Here is what you get as output, the logged in users of each system,
     [192.168.0.9] out: sandeep  tty7         2013-09-05 15:24 (:0)
     [192.168.0.9] out: alex     pts/0        2013-09-05 22:38 (:0)
     [192.168.0.9] out: root     pts/2        2013-09-06 03:31 (192.168.0.9)
-    [192.168.0.9] out: 
+    [192.168.0.9] out:
 
     [192.168.0.10] Executing task 'logged_in_users'
     [192.168.0.10] run: who
     [192.168.0.10] out: sandeep  tty7         2013-09-05 15:22 (:0)
-    [192.168.0.10] out: 
+    [192.168.0.10] out:
 
     [192.168.0.11] Executing task 'logged_in_users'
     [192.168.0.11] run: who
     [192.168.0.11] out: sandeep  tty7         2013-09-05 15:21 (:0)
-    [192.168.0.11] out: 
+    [192.168.0.11] out:
 
 
     Done.
@@ -67,7 +67,7 @@ Here is what you get as output, the logged in users of each system,
     Disconnecting from 192.168.0.10... done.
     Disconnecting from 192.168.0.09... done.
 
- 
+
 If you just ran this command, you'd realise that the process happens in a sequence. That is, the command is run on each server one after another. To run this command parallely on the listed server, pass the -P flag to the command. So, the same command runs the function in parallelly on each server,
 
 {% highlight bash %}

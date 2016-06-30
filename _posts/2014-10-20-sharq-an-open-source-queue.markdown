@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SHARQ - an Open Source, Rate Limited, Queueing System"
-date: 2014-10-20 00:00
+date: 2014-10-20 00:00:00
 comments: true
 categories: [tech, dev, opensource]
 published: true

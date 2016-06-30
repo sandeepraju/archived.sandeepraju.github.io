@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Django Dumpdata To Dump Selective Rows"
-date: 2013-08-22 08:14
+date: 2013-08-22 08:14:00
 comments: true
 categories: [dev, django, web, python]
 published: true

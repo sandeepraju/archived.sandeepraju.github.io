@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello Emacs"
-date: 2014-03-27 17:41
+date: 2014-03-27 17:41:00
 comments: true
 categories: [emacs, dev, programming, editor, lisp]
 published: true

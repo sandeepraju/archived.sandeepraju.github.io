@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Git, the stupid content tracker"
-date: 2013-08-08 20:20
+date: 2013-08-08 20:20:00
 comments: true
 categories: [talk, tech]
 published: true

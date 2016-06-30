@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello World!"
-date: 2013-08-04 22:45
+date: 2013-08-04 22:45:00
 comments: true
 categories: [etc]
 published: true

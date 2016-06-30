@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My Experiments With Postgres"
-date: 2014-03-28 18:29
+date: 2014-03-28 18:29:00
 comments: true
 categories: dev database postgres sql
 ---

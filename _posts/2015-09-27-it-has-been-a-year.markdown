@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "It has been a year already!"
-date: 2015-09-27 00:00
+date: 2015-09-27 00:00:00
 comments: true
 categories: [life, etc]
 published: true

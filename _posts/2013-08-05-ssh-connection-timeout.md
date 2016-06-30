@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SSH Connection Timeout"
-date: 2013-08-05 00:00
+date: 2013-08-05 00:00:00
 comments: true
 categories: [tech, dev]
 published: true
@@ -28,6 +28,6 @@ this tells ssh to send _sign-of-life_ signal every 60s whenever you are connecte
 	  ServerAliveInterval 60
 
 
-__UPDATE:__ Nevertheless, sometimes, due to some network issues the session might hang. In such cases, to end the SSH session, press `ENTER ~ .` in sequence. 
+__UPDATE:__ Nevertheless, sometimes, due to some network issues the session might hang. In such cases, to end the SSH session, press `ENTER ~ .` in sequence.
 
 Happy coding! :)

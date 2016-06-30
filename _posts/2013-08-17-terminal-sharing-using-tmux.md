@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terminal Sharing Using Tmux"
-date: 2013-08-17 22:10
+date: 2013-08-17 22:10:00
 comments: true
 categories: [tech, linux, dev]
 published: true
@@ -37,6 +37,6 @@ chmod 777 /tmp/share
 tmux -S /tmp/share attach
 {% endhighlight %}
 
-As simple as that! 
+As simple as that!
 
 Happy coding :)
