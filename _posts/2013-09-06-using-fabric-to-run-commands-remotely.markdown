@@ -23,7 +23,7 @@ pip install fabric
 
 This enables the _fab_ command which will be used to run fabric scripts. Fabric script file is named `fabfile.py` by convention. So, let us create a small script to check how many users logged into each server.
 
-{% highlight python linenos %}
+{% highlight python %}
 # filename: fabfile.py
 from fabric.api import env, run
 

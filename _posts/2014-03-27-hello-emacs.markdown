@@ -6,19 +6,19 @@ comments: true
 categories: [emacs, dev, programming, editor, lisp]
 published: true
 ---
-Since the day I found [Sublime Text](http://www.sublimetext.com/), it has been my favorite and default editor for all programming and general writing. The simplicity and the elegance of Sublime is what makes me love it. But sometimes, it is not just enough to know how to use a graphical editor. You need to master a command line based editor as well. I realised this when I moved to Mac at work.
+Since the day I found [Sublime Text](http://www.sublimetext.com/), it has been my favorite and default editor for all programming and general writing. The simplicity and the elegance of Sublime is what makes me love it. But sometimes, it is not just enough to know how to use a graphical editor. You need to master a command line based editor as well. I realized this when I moved to Mac at work.
 
 <!-- more -->
 
-I use Mac Book Air for all development at work. The only problem I find with using Mac for development is that, my local development setup and the production setup are way too different. As all the code I write finally run on Linux in production, there might be cases which I might overlook if I run my code on OSx while developing. Considering this fact, I have an [Debian](http://www.debian.org/) server [VirtualBox](https://www.virtualbox.org/) running on my Mac which I use to write code and run tests. This requires me to ssh into my VirtualBox and code on the console. This is when I realised how important mastering a console based editor is. Though I was familiar with [ViM](http://www.vim.org/), I was not at the same pace when I used to use Sublime. Eventually I got fed up and started mounting the VirtualBox's file system over ssh into my Mac and started using Sublime.
+I use Mac Book Air for all development at work. The only problem I find with using Mac for development is that, my local development setup and the production setup are way too different. As all the code I write finally run on Linux in production, there might be cases which I might overlook if I run my code on OSx while developing. Considering this fact, I have an [Debian](http://www.debian.org/) server [VirtualBox](https://www.virtualbox.org/) running on my Mac which I use to write code and run tests. This requires me to ssh into my VirtualBox and code on the console. This is when I realized how important mastering a console based editor is. Though I was familiar with [ViM](http://www.vim.org/), I was not at the same pace when I used to use Sublime. Eventually I got fed up and started mounting the VirtualBox's file system over ssh into my Mac and started using Sublime.
 
 All this worked fine for a few months until I found myself in a situation where I had to code on a remote server over ssh for a particular project. Mounting a remote filesystem in this case turned out to be a big disaster due to huge delays in synchronizing files over the network. At this point it was clear that I had to use a console based editor. My first choice was ViM as I was already familiar with it, but I found myself lost very soon with all the complicated shortcuts & modes it had. I am not blaming / judging it. I somewhat felt that ViM was simply not my cup of tea.
 
 I felt I was out of choices. I looked around... Ah! One of my [peer](https://twitter.com/gurteshwarsingh) was using [Emacs](http://www.gnu.org/software/emacs/). I had heard of this editor but never had the time or courage to actually try it out. I saw him seamlessly code in Emacs. It looked fast. It looked like something that I wanted. I installed it.
 
-Spending some time with Emacs, I realised that Emacs is more intuitive. It had this amazing capability that let us configure every single minute possibility to our liking. The key bindings made sense. I started to fiddle around with it and soon ended up making my Emacs look like Sublime ;) This is how my Emacs init.el looked like at the end of it...
+Spending some time with Emacs, I realized that Emacs is more intuitive. It had this amazing capability that let us configure every single minute possibility to our liking. The key bindings made sense. I started to fiddle around with it and soon ended up making my Emacs look like Sublime ;) This is how my Emacs `init.el` looked like at the end of it...
 
-{% highlight cl lineos %}
+{% highlight cl %}
 ;; emacs24 package system
 ;; from: http://ergoemacs.org/emacs/emacs_package_system.html
 (when (>= emacs-major-version 24)

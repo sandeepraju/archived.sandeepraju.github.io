@@ -11,7 +11,7 @@ A part of my work involves ssh-ing to multiple servers and working remotely. One
 
 <!-- more -->
 
-The solution involved configuring ssh on either the client machine or on the server. The basic reason why ssh times out is becasue the ssh server expects a _sign-of-life_ signal from your client at regular intervals.
+The solution involved configuring ssh on either the client machine or on the server. The basic reason why ssh times out is because the ssh server expects a _sign-of-life_ signal from your client at regular intervals.
 
 Add the following configuration on the `~/.ssh/config` file in you client(local) system.
 

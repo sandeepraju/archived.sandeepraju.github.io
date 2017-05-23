@@ -11,11 +11,11 @@ Recently, I helped my friend setup [his octopress blog](http://vijaym.in). The p
 
 <!-- more -->
 
-Simply said, tmux is a _terminal multiplexer_. What that means? Here is what the [official site](http://tmux.sourceforge.net/) says...
+Simply said, tmux is a _terminal multiplexer_. What does that means? Here is what the [official site](http://tmux.sourceforge.net/) says...
 
 >It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal. And do a lot more.
 
-Basically, its a better alternative to [screen](http://www.gnu.org/software/screen/) which I was already using for a while.
+Basically, it's a better alternative to [screen](http://www.gnu.org/software/screen/) which I was already using for a while.
 
 This is what I did to share _his_ terminal with _me_,
 

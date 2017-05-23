@@ -11,7 +11,7 @@ Thanks to my [telephony geek friend](https://twitter.com/GurteshwarSingh) for le
 
 <!-- more -->
 
-{% highlight python linenos %}
+{% highlight python %}
 from django.core import serializers
 
 # Generate a queryset depending on whatever you need

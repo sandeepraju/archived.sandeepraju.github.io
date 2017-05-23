@@ -15,7 +15,7 @@ Being a Postgres user from the past couple of months, I have learnt some tricks,
 
 I am sure everyone agrees that writing queries (especially some long ones) in psql console is a pain in the ass. I used to generally compose those queries in a text editor of my choice and copy-paste them into the console... until I found out about the `\e` option! When you first invoke it, you will be prompted to choose the editor of your choice. Once this is done, you can invoke `\e` whenever you have to write queries and then save & close the editor to run them!
 
-{% highlight psql linenos %}
+{% highlight psql %}
 postgres=# \e
 
 Select an editor.  To change later, run 'select-editor'.
@@ -38,7 +38,7 @@ Sometimes you'd want to see what all clients are accessing the database. In addi
 
 This is how a select query on `pg_stat_activity` looks like.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 postgres=# select * from pg_stat_activity;
 -[ RECORD 1 ]----+--------------------------------
 datid            | 11951
@@ -57,6 +57,7 @@ waiting          | f
 current_query    | select * from pg_stat_activity;
 {% endhighlight %}
 
+
 As you can see, this table gives a lot of insights into the activity of the database.
 
 
@@ -64,7 +65,7 @@ As you can see, this table gives a lot of insights into the activity of the data
 
 This is a general requirement where you might want to take a dump of a table or an entire database for various purposes. This is simple in Postgres.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 # dump the entire database
 $ pg_dump <database_name> > /path/to/output/file
 
@@ -81,7 +82,7 @@ $ psql -d <database_name> -f /path/to/output/file
 
 This trick can be handy in a couple of places where we might need to dump only selective rows for further processing.
 
-{% highlight sql linenos %}
+{% highlight sql %}
 -- copy to sql file
 COPY (SELECT * FROM table_name_here WHERE some_field>10) TO '/path/to/output/file.sql';
 
@@ -100,7 +101,7 @@ COPY table_name_here FROM '/path/to/output/file.sql' WITH CSV;
 
 [Surveillance Lab Wiki](http://surveillance.mcgill.ca/wiki/Postgres%20Tricks) lists three very useful commands that I have used several times over the past few months.
 
-{% highlight sql linenos %}
+{% highlight sql %}
 -- all database sizes
 select datname, pg_size_pretty(pg_database_size(datname)) as size from pg_database order by pg_database_size(datname) desc;
 
@@ -118,7 +119,7 @@ where table_name = 'all_join_hosp';
 
 It is a common requirement for everyone to know how the database runs a particular query so that it can be optimized. One command that helps us lot in this regard is `EXPLAIN ANALYZE`.
 
-{% highlight sql linenos %}
+{% highlight sql %}
 postgres=# EXPLAIN ANALYZE select * from pg_shadow;
 -[ RECORD 1 ]-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 QUERY PLAN | Nested Loop Left Join  (cost=0.00..9.30 rows=1 width=144) (actual time=0.017..0.018 rows=1 loops=1)

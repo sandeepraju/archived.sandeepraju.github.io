@@ -13,32 +13,9 @@ Recently, I faced an unique situation. I had to rate limit the queues in a speci
 
 All my efforts at searching for a queue with this specific feature set (dynamic queues, realtime rate limits & constant flow rate) resulted in scripts and hacks written by several people, around various existing systems that were not built for this use case. It was apparent after some time that there was no simple, out of the box, cleaner solution for this problem and there was a scope for filling this void. This is how SHARQ came into existence.
 
-SHARQ bridges this void in a simple and elegant manner by supporting all the above mentioned features. It is built using [Python](http://www.python.org/) ([Flask](http://flask.pocoo.org/) & [Gevent](http://www.gevent.org/) and uses [Redis](http://redis.io/) as a broker. It talks HTTP with JSON payloads which makes writing workers in any language easy.
+SHARQ bridges this void in a simple and elegant manner by supporting all the above mentioned features. It is built using [Python](http://www.python.org/) ([Flask](http://flask.pocoo.org/) & [Gevent](http://www.gevent.org/) and uses [Redis](http://redis.io/) as a broker). It talks HTTP with JSON payloads which makes writing workers in any language easy.
 
-SHARQ can be installed from [PyPI](https://pypi.python.org/pypi) using the following command:
-
-{% highlight bash %}
-pip install sharq-server
-{% endhighlight %}
-
-Once SHARQ is installed, it will expose a sharq-server command. The command is minimal and accepts a SHARQ configuration file. To get started quickly, grab the SHARQ [sample configuration file from here](https://raw.githubusercontent.com/plivo/sharq-server/master/sharq.conf). The SHARQ Server can be started with the following command:
-
-{% highlight bash %}
-sharq-server --config sharq.conf
-{% endhighlight %}
-
-and you'll see SHARQ server running in foreground:
-
-	___ _              ___    ___
-	/ __| |_  __ _ _ _ / _ \  / __| ___ _ ___ _____ _ _
-	\__ \ ' \/ _` | '_| (_) | \__ \/ -_) '_\ V / -_) '_|
-	|___/_||_\__,_|_|  \__\_\ |___/\___|_|  \_/\___|_|
-
-	Version: 0.1.0
-
-	Listening on: 127.0.0.1:8080
-
-Now, you can play around with SHARQ using its [REST APIs](http://sharq.io/docs/apireference.html).To know more about how to use SHARQ and its enqueue-dequeue-finish workflow, checkout the [getting started section on sharq.io](http://sharq.io/docs/gettingstarted.html).
+To know more about how to use SHARQ and its enqueue-dequeue-finish workflow, checkout the [getting started section on sharq.io](http://sharq.io/docs/gettingstarted.html).
 
 SHARQ is open source and is [available on Github](https://github.com/plivo/sharq-server). Pull requests are always welcome!
 
