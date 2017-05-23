@@ -1,0 +1,21 @@
+# Site settings
+title: Sandeep Raju
+header-img: img/home-bg.jpg
+email: me@sandeepraju.in
+description: ""
+baseurl: ""
+url: "http://sandeepraju.in"
+twitter_username: sandeeprajup
+github_username: sandeepraju
+facebook_username: sandeep.raju.p
+disqus_shortname: sandeepraju
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: :year/:month/:day/:title
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+# Required gems
+gems: [jekyll-paginate, jekyll-feed, kramdown]
