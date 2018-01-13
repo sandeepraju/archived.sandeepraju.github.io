@@ -17,13 +17,29 @@
   <link href='https://fonts.googleapis.com/css?family=Alegreya:400,400italic,500,500italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
   <style type="text/css">
-  html, body {
- margin:0;
- padding:0;
- height:100%;
- font-family: 'Alegreya', serif;
- color: #2f2f2f;
-}
+    html {
+      height: 100%;
+    }
+
+    body {
+      min-height: 100%;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Alegreya', serif;
+      color: #2f2f2f;
+    }
+
+    .container {
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     main {
       /* font-family: 'Source Serif Pro', serif; */
@@ -31,7 +47,7 @@
       color: #2f2f2f;
       width: 80%;
       margin: auto auto auto auto;
-      height: 85%;
+      flex: 1 0 auto;
     }
 
     main h1 {
@@ -76,7 +92,6 @@
     }
 
     footer {
-      height: 7%;
       text-align: center;
       color: #eeeeee;
     }
@@ -88,25 +103,27 @@
 </head>
 
 <body>
-  <main>
-    <h1>Sandeep Raju Prabhakar</h1>
-    <section>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nisl eu est vulputate faucibus. Quisque ante lorem, rutrum sed erat bibendum, finibus mattis nunc. Suspendisse aliquam elementum metus, eu vehicula ex volutpat luctus. Integer ut arcu nulla.
-        Cras dolor libero, dapibus ac turpis eu, tincidunt fringilla nulla. Duis venenatis pellentesque erat ac tempus. Phasellus ac feugiat dui, nec congue neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget faucibus ex.
-      </p>
-      <ul>
-        <li><a href="https://github.com/sandeepraju" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/sandeeprajup" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li><a href="https://twitter.com/sandeeprajup" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        <li><a href="https://medium.com/@sandeepraju" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
-        <li><a href="mailto:me@sandeepraju.in" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p><i class="fa fa-copyright" aria-hidden="true"></i> 2018 Sandeep Raju Prabhakar</p>
-  </footer>
+  <div class="container">
+    <main>
+      <h1>Sandeep Raju Prabhakar</h1>
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nisl eu est vulputate faucibus. Quisque ante lorem, rutrum sed erat bibendum, finibus mattis nunc. Suspendisse aliquam elementum metus, eu vehicula ex volutpat luctus. Integer ut arcu nulla.
+          Cras dolor libero, dapibus ac turpis eu, tincidunt fringilla nulla. Duis venenatis pellentesque erat ac tempus. Phasellus ac feugiat dui, nec congue neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget faucibus ex.
+        </p>
+        <ul>
+          <li><a href="https://github.com/sandeepraju" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/sandeeprajup" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="https://twitter.com/sandeeprajup" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://medium.com/@sandeepraju" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
+          <li><a href="mailto:me@sandeepraju.in" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>© 2018 Sandeep Raju Prabhakar</p>
+    </footer>
+  </div>
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <!-- <script>
     (function(b, o, i, l, e, r) {
