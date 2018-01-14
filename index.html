@@ -14,8 +14,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Alegreya:400,400italic,500,500italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
+  <link href='https://fonts.googleapis.com/css?family=Alegreya:400,400italic,500,500italic,700,700italic,800,800italic,900,900italic'
+    rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w="
+    crossorigin="anonymous" />
   <style type="text/css">
     html {
       height: 100%;
@@ -81,7 +83,8 @@
 
     a:hover {
       border-bottom: 1px dashed #999;
-      color: #555555;
+      /* color: #555555; */
+      color: #6c16c7;
     }
 
     section p {
@@ -99,6 +102,76 @@
     footer:hover {
       color: #aaaaaa;
     }
+
+    /* Toolip ref: https://codepen.io/cbracco/pen/qzukg */
+
+    /* Add this attribute to the element that needs a tooltip */
+
+    [data-tooltip] {
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    /* Hide the tooltip content by default */
+
+    [data-tooltip]:before,
+    [data-tooltip]:after {
+      visibility: hidden;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Position tooltip above the element */
+
+    [data-tooltip]:before {
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      margin-bottom: 5px;
+      margin-left: -60px;
+      padding: 7px;
+      width: 100px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background-color: #000;
+      background-color: hsla(0, 0%, 20%, 0.9);
+      color: #fff;
+      content: attr(data-tooltip);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    /* Triangle hack to make tooltip look like a speech bubble */
+
+    [data-tooltip]:after {
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      margin-left: -5px;
+      width: 0;
+      border-top: 5px solid #000;
+      border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+      border-right: 5px solid transparent;
+      border-left: 5px solid transparent;
+      content: " ";
+      font-size: 0;
+      line-height: 0;
+    }
+
+    /* Show tooltip content on hover */
+
+    [data-tooltip]:hover:before,
+    [data-tooltip]:hover:after {
+      visibility: visible;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+      opacity: 1;
+    }
   </style>
 </head>
 
@@ -108,16 +181,44 @@
       <h1>Sandeep Raju Prabhakar</h1>
       <section>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nisl eu est vulputate faucibus. Quisque ante lorem, rutrum sed erat bibendum, finibus mattis nunc. Suspendisse aliquam elementum metus, eu vehicula ex volutpat luctus. Integer ut arcu nulla.
-          Cras dolor libero, dapibus ac turpis eu, tincidunt fringilla nulla. Duis venenatis pellentesque erat ac tempus. Phasellus ac feugiat dui, nec congue neque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus eget faucibus ex.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a nisl eu est vulputate faucibus. Quisque ante lorem, rutrum
+          sed erat bibendum, finibus mattis nunc. Suspendisse aliquam elementum metus, eu vehicula ex volutpat luctus. Integer
+          ut arcu nulla. Cras dolor libero, dapibus ac turpis eu, tincidunt fringilla nulla. Duis venenatis pellentesque
+          erat ac tempus. Phasellus ac feugiat dui, nec congue neque. Interdum et malesuada fames ac ante ipsum primis in
+          faucibus. Vivamus eget faucibus ex.
         </p>
         <ul>
-          <li><a href="https://github.com/sandeepraju" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/sandeeprajup" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-          <li><a href="https://twitter.com/sandeeprajup" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="https://medium.com/@sandeepraju" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a></li>
-          <li><a href="mailto:me@sandeepraju.in" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-          <li><a href="./SandeepRajuPrabhakar-CV.pdf" target="_blank"><i class="fa fa-file-text" aria-hidden="true"></i></i></a></li>
+          <li>
+            <a data-tooltip="Github" href="https://github.com/sandeepraju" target="_blank">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tooltip="Linkedin" href="https://www.linkedin.com/in/sandeeprajup" target="_blank">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tooltip="Twitter" href="https://twitter.com/sandeeprajup" target="_blank">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tooltip="Medium" href="https://medium.com/@sandeepraju" target="_blank">
+              <i class="fa fa-medium" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tooltip="Email" href="mailto:me@sandeepraju.in" target="_blank">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a data-tooltip="Résumé" href="./SandeepRajuPrabhakar-Resume.pdf" target="_blank">
+              <i class="fa fa-file-text" aria-hidden="true"></i>
+              </i>
+            </a>
+          </li>
         </ul>
       </section>
     </main>
