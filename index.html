@@ -25,6 +25,11 @@
 
     body {
       min-height: 100%;
+      display: flex;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html,
@@ -36,11 +41,12 @@
     }
 
     .container {
-      height: inherit;
+      min-height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
+      align-content: center;
+      justify-content: flex-start;
     }
 
     main {
@@ -97,6 +103,9 @@
     footer {
       text-align: center;
       color: #eeeeee;
+      align-self: flex-end;
+      margin: auto;
+      height: 4.5em;
     }
 
     footer:hover {
